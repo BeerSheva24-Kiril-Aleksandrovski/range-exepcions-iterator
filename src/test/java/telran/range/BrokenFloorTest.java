@@ -10,7 +10,7 @@ import telran.range.exceptions.BallBrokenFloor;
 public class BrokenFloorTest {
 
     private int getMinBrokenFloor(BallBrokenFloor bbf) {
-        int low = 0, high = Integer.MAX_VALUE;
+        int low = 1, high = Integer.MAX_VALUE;
         while (low <= high) {
             int mid = (low + high) / 2;
             try {
