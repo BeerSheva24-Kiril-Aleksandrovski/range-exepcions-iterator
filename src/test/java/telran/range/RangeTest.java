@@ -72,4 +72,19 @@ public class RangeTest {
         assertArrayEquals(expected, actual);
         assertThrowsExactly(NoSuchElementException.class,it::next);
     }
+    @Test
+    void iteratorPredicateTest3() {
+        Range rangeIt = Range.getRange(98, 104);
+        rangeIt.setPredicate(null);
+        Iterator <Integer> it = rangeIt.iterator();
+        Integer [] expected = {98,99,100,101, 102, 103,104};
+        Integer [] actual = new Integer[expected.length];
+
+        int index = 0;
+        while(it.hasNext()) {
+            actual[index++] = it.next();
+        }
+        assertArrayEquals(expected, actual);
+        assertThrowsExactly(NoSuchElementException.class,it::next);
+    }
 }
